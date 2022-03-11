@@ -1,38 +1,32 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ *
+ */
 int main(void)
 {
-  int afirst;
-  int a;
-  int bfirst;
-  int b;
+	int p, q;
 
-  for(afirst=48; afirst<58; afirst++)
-    {
-      for (a=48; a<58; a++)
-        {
-        b=a+1;
-      bfirst=afirst;
-      for (; bfirst<58; bfirst++)
-        {
-          for (; b<58; b++)
-  {
-              putchar(afirst);
-              putchar(a);
-              putchar(' ');
-              putchar(bfirst);
-              putchar(b);
-              if (afirst != 57 || bfirst != 57 ||a != 56 || b != 57)
-                {
-                  putchar(',');
-                  putchar(' ');
-                }
-            }
-          b=48;
-        }
-      }
-    }
-  putchar('\n');
-  return (0);
+	for (p = 0; p <= 98; p++)
+	{
+		for (q = p + 1; q <= 99; q++)
+		{
+			putchar((p / 10) + '0');
+			putchar((p % 10) + '0');
+			putchar(' ');
+			putchar((q / 10) + '0');
+			putchar((q % 10) + '0');
+			if (p == 98 && q == 99)
+				continue;
+			putchar(',');
+			putchar(' ');
+		}
+	}
+	putchar('\n');
+	return (0);
 }
